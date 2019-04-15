@@ -1,0 +1,5 @@
+export const movieApiUrl = "https://api.themoviedb.org/3"
+export const apiKey = "&api_key=6ed12e064b90ae1290fa326ce9e790ff"
+export const popularMoviesQuery = "/discover/movie?sort_by=popularity.desc"
+export const movieQuery = "/movie"
+export const searchQuery = "/search"

@@ -1,11 +1,29 @@
 import React, { Fragment } from 'react';
 import MoviesContainer from './Components/MoviesContainer';
-import './App.css'; 
+import MovieView from './Components/MovieView';
+import { Switch, Route } from 'react-router-dom';
+import { withRouter } from "react-router";
+import './app.scss'; 
+
 
 const App = () => {
     return (
-      <MoviesContainer />
+      <Fragment>
+        <Switch>
+          <Route 
+            path="/:id" 
+            exact
+            render= {({match, history, location}) => <MovieView match={match} history={history} location={location} />} 
+          />
+          <Route 
+            path="/" 
+            exact 
+            render= {() => <MoviesContainer />} 
+          />
+          <MoviesContainer />
+        </Switch>
+      </Fragment>
     );
 }
 
-export default App;
+export default withRouter(App);
